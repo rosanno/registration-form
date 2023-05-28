@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+
+    <!-- Tailwindcss CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .input {
+          @apply border border-gray-300 focus:outline-none focus:border-[#0C75FF] rounded-md p-2 mt-2 w-full;
+        }
+        .error {
+          @apply border-red-400 focus:border-red-400 bg-red-400/10;
+        }
+        .active {
+          @apply bg-[#0C75FF] text-white;
+        }
+        .inactive {
+          @apply bg-gray-100 text-black;
+        }
+
+        @layer base {
+          input[type="number"]::-webkit-outer-spin-button,
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"] {
+            appearance: none;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-full h-screen overflow-hidden bg-slate-900 flex justify-center items-center">
+      <div class="bg-white rounded-md overflow-hidden shadow w-full max-w-[980px] h-[590px]">
+        <div class="form-container block h-full">
+          <div class="grid grid-cols-4 justify-center h-full w-full">
+            <div class="col-span-2 p-6">
+              <div>
+                <div class="flex items-center space-x-8 mb-4">
+                  <div class="flex items-center space-x-3">
+                    <div class="active px-3 py-1 rounded-md curs-default" data-nav-one>1</div>
+                    <span class="text-sm font-medium">Step 1</span>
+                  </div>
+                  <div class="flex items-center space-x-3">
+                    <div class="inactive px-3 py-1 rounded-md cursor-default" data-nav-two>2</div>
+                    <span class="text-sm font-medium">Step 2</span>
+                  </div>
+                </div>
+                <hr />
+                <h1 class="text-2xl font-semibold mt-3">Register</h1>
+              </div>
+              <form action="" class="mt-10">
+                <div class="block" id="form-one" data-form-one>
+                  <div class="flex items-center gap-6">
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">First Name</p>
+                      <input
+                        type="text"
+                        class="input input-one"
+                        id="firstName"
+                        data-input-firstName
+                      />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Last Name</p>
+                      <input
+                        type="text"
+                        class="input input-one"
+                        id="lastName"
+                        data-input-lastName
+                      />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-6 mt-6">
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Email</p>
+                      <input type="text" class="input input-one" id="email" data-input-email />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Contact #</p>
+                      <input
+                        type="number"
+                        class="input input-one"
+                        id="contact"
+                        data-input-contact
+                        maxlength="10"
+                      />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                  </div>
+                  <div class="w-full mt-6">
+                    <p>City</p>
+                    <input type="text" class="input input-one" id="city" data-input-city />
+                    <span class="text-xs text-red-500"></span>
+                  </div>
+                  <hr class="my-10" />
+                  <button
+                    class="bg-[#0C75FF] text-white text-sm py-4 px-10 rounded-md float-right"
+                    id="nextBtn"
+                  >
+                    Next Step
+                  </button>
+                </div>
+                <div class="hidden" id="form-two" data-form-two>
+                  <div class="flex items-center gap-6">
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Barangay</p>
+                      <input
+                        type="text"
+                        class="input input-two"
+                        id="barangay"
+                        data-input-barangay
+                      />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Street/Unit</p>
+                      <input type="text" class="input input-two" id="street" data-input-street />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-6 mt-6">
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Province</p>
+                      <input
+                        type="text"
+                        class="input input-two"
+                        id="province"
+                        data-input-province
+                      />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Zip Code</p>
+                      <input type="text" class="input input-two" id="zip" data-input-zip />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-6 mt-6">
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Password</p>
+                      <input
+                        type="password"
+                        class="input input-two"
+                        id="password"
+                        data-input-password
+                      />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                    <div class="w-full max-h-[68px]">
+                      <p class="text-sm">Confirm Password</p>
+                      <input
+                        type="password"
+                        class="input input-two"
+                        id="confirmPassword"
+                        data-input-confirmPassword
+                      />
+                      <span class="text-xs text-red-500"></span>
+                    </div>
+                  </div>
+                  <hr class="my-10" />
+                  <button
+                    class="bg-[#0C75FF] text-white text-sm py-4 px-10 rounded-md"
+                    id="prevBtn"
+                  >
+                    Prev
+                  </button>
+                  <button
+                    class="bg-[#0C75FF] text-white text-sm py-4 px-10 rounded-md float-right"
+                    id="register"
+                  >
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="bg-gray-100 col-span-2 flex justify-center items-center">
+              <img src="bg-img.svg" class="w-[320px]" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="registered-container hidden h-full">
+          <div class="grid grid-cols-4 justify-center h-full w-full">
+            <div class="col-span-2 p-6">
+              <div>
+                <h1>Registration Success</h1>
+              </div>
+              <hr class="my-4">
+              <div class="flex flex-col justify-center details">
+              </div>
+            </div>
+            <div class="bg-gray-100 col-span-2 flex justify-center items-center">
+              <img src="bg-done.svg" class="w-[320px]" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="validate.js"></script>
+  </body>
+</html>
